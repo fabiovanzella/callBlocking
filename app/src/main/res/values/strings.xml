@@ -28,6 +28,10 @@
     <string name="log_banner_warning">Proteção Inativa: o app não é o filtro de chamadas padrão.</string>
     <string name="log_banner_fix">Ativar Proteção</string>
     <string name="log_toggle_label">Bloqueio automático</string>
+    <string name="mode_reject_title">Rejeitar</string>
+    <string name="mode_reject_desc">Rejeita direto sem som nem tela</string>
+    <string name="mode_silence_title">Silenciar na tela</string>
+    <string name="mode_silence_desc">Mostra na tela sem som nem vibrar</string>
     <string name="log_summary_today">%1$d hoje</string>
     <string name="log_summary_month">%1$d este mês</string>
     <string name="log_empty_title">Nenhuma chamada bloqueada</string>

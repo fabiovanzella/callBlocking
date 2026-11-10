@@ -18,6 +18,7 @@ class SettingsRepository(private val context: Context) {
 
     private object Keys {
         val BLOCKING_ENABLED = booleanPreferencesKey("blocking_enabled")
+        val CALL_ACTION_MODE = stringPreferencesKey("call_action_mode")
         val ONBOARDING_DONE = booleanPreferencesKey("onboarding_done")
         val NOTIF_PENDING_COUNT = intPreferencesKey("notif_pending_count")
         val LAST_BLOCKED_NUMBER = stringPreferencesKey("last_blocked_number")
@@ -26,6 +27,15 @@ class SettingsRepository(private val context: Context) {
 
     val blockingEnabled: Flow<Boolean> = context.dataStore.data.map { preferences ->
         preferences[Keys.BLOCKING_ENABLED] ?: true
+    }
+
+    val callActionMode: Flow<CallActionMode> = context.dataStore.data.map { preferences ->
+        val raw = preferences[Keys.CALL_ACTION_MODE] ?: CallActionMode.REJECT.name
+        try {
+            CallActionMode.valueOf(raw)
+        } catch (_: Exception) {
+            CallActionMode.REJECT
+        }
     }
 
     val onboardingDone: Flow<Boolean> = context.dataStore.data.map { preferences ->
@@ -43,6 +53,12 @@ class SettingsRepository(private val context: Context) {
     suspend fun setBlockingEnabled(enabled: Boolean) {
         context.dataStore.edit { preferences ->
             preferences[Keys.BLOCKING_ENABLED] = enabled
+        }
+    }
+
+    suspend fun setCallActionMode(mode: CallActionMode) {
+        context.dataStore.edit { preferences ->
+            preferences[Keys.CALL_ACTION_MODE] = mode.name
         }
     }
 

@@ -3,6 +3,7 @@ package com.fabio.callblocker.screening
 import android.telecom.Call
 import android.telecom.CallScreeningService
 import com.fabio.callblocker.CallBlockerApp
+import com.fabio.callblocker.data.CallActionMode
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -33,17 +34,23 @@ class BlockerScreeningService : CallScreeningService() {
 
             val rawNumber = extractNumber(callDetails)
             val now = System.currentTimeMillis()
+            val mode = app.settingsRepository.callActionMode.first()
 
             try {
                 // Timeout de segurança para garantir a resposta ao sistema bem antes do limite (~5s)
                 withTimeoutOrNull(2000L) {
                     app.blockedCallRepository.insert(rawNumber, now)
                     val newCount = app.settingsRepository.recordBlockedForNotification(rawNumber, now)
-                    app.blockedCallNotifier.showBlockedNotification(newCount, rawNumber, now)
+                    if (mode == CallActionMode.REJECT) {
+                        app.blockedCallNotifier.showBlockedNotification(newCount, rawNumber, now)
+                    }
                 }
             } finally {
-                // Rejeita a chamada, suprime notificação de perdida do sistema, mas mantém no histórico
-                respondToCall(callDetails, blockCallResponse())
+                if (mode == CallActionMode.SILENCE) {
+                    respondToCall(callDetails, silenceCallResponse())
+                } else {
+                    respondToCall(callDetails, blockCallResponse())
+                }
             }
         }
     }
@@ -61,6 +68,14 @@ class BlockerScreeningService : CallScreeningService() {
 
     private fun allowCallResponse(): CallResponse {
         return CallResponse.Builder().build()
+    }
+
+    private fun silenceCallResponse(): CallResponse {
+        return CallResponse.Builder()
+            .setDisallowCall(false) // Permite que a chamada entre no discador
+            .setSilenceCall(true)   // Silencia o toque e a vibração
+            .setSkipCallLog(false)  // Mantém no histórico
+            .build()
     }
 
     private fun blockCallResponse(): CallResponse {

@@ -32,10 +32,13 @@ import androidx.compose.material.icons.filled.ContentCopy
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.DeleteSweep
 import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.NotificationsOff
 import androidx.compose.material.icons.filled.PersonAdd
 import androidx.compose.material.icons.filled.PhoneDisabled
+import androidx.compose.material.icons.filled.PhoneMissed
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.SettingsSuggest
+import androidx.compose.material.icons.filled.VolumeOff
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Badge
@@ -55,6 +58,8 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -70,6 +75,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.fabio.callblocker.R
+import com.fabio.callblocker.data.CallActionMode
 import com.fabio.callblocker.util.CallGrouper
 import com.fabio.callblocker.util.GroupedCallItem
 import com.fabio.callblocker.util.PhoneFormatter
@@ -222,6 +228,42 @@ fun LogScreen(
                         )
                     }
                 }
+            }
+
+            // Seletor de Modo: Rejeitar vs Silenciar na Tela
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 4.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                FilterChip(
+                    selected = state.callActionMode == CallActionMode.REJECT,
+                    onClick = { viewModel.setCallActionMode(CallActionMode.REJECT) },
+                    label = { Text(stringResource(R.string.mode_reject_title)) },
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Default.Block,
+                            contentDescription = null,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    },
+                    modifier = Modifier.weight(1f)
+                )
+
+                FilterChip(
+                    selected = state.callActionMode == CallActionMode.SILENCE,
+                    onClick = { viewModel.setCallActionMode(CallActionMode.SILENCE) },
+                    label = { Text(stringResource(R.string.mode_silence_title)) },
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Default.VolumeOff,
+                            contentDescription = null,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    },
+                    modifier = Modifier.weight(1f)
+                )
             }
 
             // Lista de chamadas ou estado vazio

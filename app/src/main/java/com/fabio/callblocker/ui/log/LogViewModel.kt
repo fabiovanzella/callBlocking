@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.fabio.callblocker.CallBlockerApp
 import com.fabio.callblocker.data.BlockedCallRepository
+import com.fabio.callblocker.data.CallActionMode
 import com.fabio.callblocker.data.SettingsRepository
 import com.fabio.callblocker.notify.BlockedCallNotifier
 import com.fabio.callblocker.tile.BlockingTileService
@@ -21,6 +22,7 @@ import kotlinx.coroutines.launch
 
 data class LogUiState(
     val blockingEnabled: Boolean = true,
+    val callActionMode: CallActionMode = CallActionMode.REJECT,
     val isRoleHeld: Boolean = true,
     val groups: List<DayCallGroup> = emptyList(),
     val summary: CallSummary = CallSummary(0, 0),
@@ -38,11 +40,13 @@ class LogViewModel(
 
     val uiState: StateFlow<LogUiState> = combine(
         settingsRepository.blockingEnabled,
+        settingsRepository.callActionMode,
         callRepository.allCalls,
         isRoleHeldFlow
-    ) { enabled, calls, roleHeld ->
+    ) { enabled, mode, calls, roleHeld ->
         LogUiState(
             blockingEnabled = enabled,
+            callActionMode = mode,
             isRoleHeld = roleHeld,
             groups = CallGrouper.groupCalls(calls),
             summary = CallGrouper.computeSummary(calls),
@@ -70,6 +74,12 @@ class LogViewModel(
         viewModelScope.launch {
             settingsRepository.setBlockingEnabled(enabled)
             BlockingTileService.requestUpdate(appContext)
+        }
+    }
+
+    fun setCallActionMode(mode: CallActionMode) {
+        viewModelScope.launch {
+            settingsRepository.setCallActionMode(mode)
         }
     }
 
