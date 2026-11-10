@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">着信拒否</string>
+    <string name="tile_label">着信拒否</string>
+    <string name="tile_state_active">保護中</string>
+    <string name="tile_state_inactive">一時停止</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">着信拒否へようこそ</string>
+    <string name="onboarding_subtitle">連絡先に登録されていない番号からの迷惑電話や詐欺電話を着信前にブロックします。</string>
+    <string name="onboarding_role_title">着信スクリーニング</string>
+    <string name="onboarding_role_desc">連絡先以外の番号を鳴動前に拒否するには、Androidの標準の発信者番号/迷惑電話アプリとして設定する必要があります。</string>
+    <string name="onboarding_btn_role">標準の着信拒否アプリに設定</string>
+    <string name="onboarding_role_granted">スクリーニング権限が付与されました！</string>
+    <string name="onboarding_notif_title">控えめな通知</string>
+    <string name="onboarding_notif_desc">着信が拒否されたときに、通知バーに静かに概要を表示します。</string>
+    <string name="onboarding_btn_notif">通知を許可</string>
+    <string name="onboarding_xiaomi_title">HyperOS / POCO の最適化</string>
+    <string name="onboarding_xiaomi_desc">アプリを閉じた状態でも確実にブロックを機能させるため、「自動起動」を有効にし、バッテリー制限を「制限なし」に設定してください。</string>
+    <string name="onboarding_btn_xiaomi">HyperOSの設定を開く</string>
+    <string name="onboarding_tile_title">クイック設定タイル</string>
+    <string name="onboarding_tile_desc">荷物の配達待ちなどのために、クイック設定パネルにオン/オフの切り替えボタンを追加できます。</string>
+    <string name="onboarding_btn_add_tile">クイック設定に追加</string>
+    <string name="onboarding_btn_finish">使ってみる</string>
+    <string name="onboarding_btn_skip">この手順をスキップ</string>
+    <string name="btn_back">戻る</string>
+    <string name="btn_next">次へ</string>
+    <string name="toast_copied">番号をコピーしました</string>
+    <string name="log_repeated_format">拒否された着信 %1$d 件（最新: %2$s）</string>
+
+    <!-- Log Screen -->
+    <string name="log_title">拒否履歴</string>
+    <string name="log_banner_warning">保護が無効です: 標準の着信スクリーニングアプリとして設定されていません。</string>
+    <string name="log_banner_fix">保護を有効にする</string>
+    <string name="log_toggle_label">自動着信拒否</string>
+    <string name="mode_reject_title">着信拒否</string>
+    <string name="mode_reject_desc">鳴動も着信画面も出さずに直接拒否します</string>
+    <string name="mode_silence_title">画面で消音</string>
+    <string name="mode_silence_desc">着信音や振動なしで画面にのみ着信を表示します</string>
+    <string name="log_summary_today">本日 %1$d 件</string>
+    <string name="log_summary_month">今月 %1$d 件</string>
+    <string name="log_empty_title">ブロックされた着信はありません</string>
+    <string name="log_empty_desc">連絡先にない番号からの着信が拒否されると、ここに表示されます。</string>
+    <string name="log_section_today">今日</string>
+    <string name="log_section_yesterday">昨日</string>
+    <string name="log_unknown_number">非通知番号</string>
+
+    <!-- BottomSheet Actions -->
+    <string name="action_call">発信</string>
+    <string name="action_save_contact">連絡先に追加</string>
+    <string name="action_copy">番号をコピー</string>
+    <string name="action_search_web">Webで検索</string>
+    <string name="action_delete">履歴から削除</string>
+    <string name="action_clear_all">すべての履歴を削除</string>
+    <string name="action_revisit_setup">権限と最適化の確認</string>
+    <string name="dialog_clear_all_title">着信拒否履歴を削除しますか？</string>
+    <string name="dialog_clear_all_msg">アプリ内の履歴が削除されます。端末の標準通話履歴には影響しません。</string>
+    <string name="dialog_confirm">削除</string>
+    <string name="dialog_cancel">キャンセル</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel_name">拒否された着信</string>
+    <string name="notif_channel_desc">連絡先外からの拒否された着信の控えめな通知</string>
+    <string name="notif_title_single">着信をブロックしました</string>
+    <string name="notif_title_multiple">%1$d 件の着信をブロックしました</string>
+    <string name="notif_text_last">最新: %1$s（%2$s）</string>
+</resources>

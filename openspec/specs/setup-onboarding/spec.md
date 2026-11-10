@@ -6,7 +6,7 @@ Guiar o usuário na primeira execução para conceder ao app tudo o que ele prec
 ## Requirements
 
 ### Requirement: Solicitar papel de filtro de chamadas
-Na primeira execução, o app MUST explicar o que faz e solicitar ao sistema o papel de app de identificação de chamadas e spam.
+Na primeira execução, o app MUST explicar o que faz e solicitar ao sistema o papel de app de identificação de chamadas e spam, com textos exibidos no idioma configurado no aparelho (ou inglês padrão).
 
 #### Scenario: Usuário concede o papel
 - **WHEN** o usuário aceita o pedido do sistema para tornar o app o filtro de chamadas

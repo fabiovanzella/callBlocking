@@ -19,8 +19,16 @@ class CallGrouperTest {
 
         val groups = CallGrouper.groupCalls(calls)
         assertEquals(1, groups.size)
-        assertEquals("Hoje", groups[0].dayLabel)
+        assertEquals("Today", groups[0].dayLabel)
         assertEquals(2, groups[0].items.size)
+
+        val groupsPt = CallGrouper.groupCalls(calls, todayLabel = "Hoje", yesterdayLabel = "Ontem")
+        assertEquals(1, groupsPt.size)
+        assertEquals("Hoje", groupsPt[0].dayLabel)
+
+        val groupsJa = CallGrouper.groupCalls(calls, todayLabel = "今日", yesterdayLabel = "昨日")
+        assertEquals(1, groupsJa.size)
+        assertEquals("今日", groupsJa[0].dayLabel)
 
         val item1 = groups[0].items.find { it.number == "11987654321" }!!
         assertEquals(3, item1.count)
@@ -28,6 +36,26 @@ class CallGrouperTest {
 
         val item2 = groups[0].items.find { it.number == "21999998888" }!!
         assertEquals(1, item2.count)
+    }
+
+    @Test
+    fun testYesterdayGroupingWithLocalizedLabels() {
+        val cal = Calendar.getInstance()
+        cal.add(Calendar.DAY_OF_YEAR, -1)
+        val yesterdayTimestamp = cal.timeInMillis
+
+        val calls = listOf(
+            BlockedCall(id = 1, number = "11987654321", timestamp = yesterdayTimestamp)
+        )
+
+        val groupsEn = CallGrouper.groupCalls(calls)
+        assertEquals("Yesterday", groupsEn[0].dayLabel)
+
+        val groupsPt = CallGrouper.groupCalls(calls, todayLabel = "Hoje", yesterdayLabel = "Ontem")
+        assertEquals("Ontem", groupsPt[0].dayLabel)
+
+        val groupsEs = CallGrouper.groupCalls(calls, todayLabel = "Hoy", yesterdayLabel = "Ayer")
+        assertEquals("Ayer", groupsEs[0].dayLabel)
     }
 
     @Test

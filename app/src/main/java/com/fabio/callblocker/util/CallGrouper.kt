@@ -31,7 +31,11 @@ object CallGrouper {
 
     fun formatTime(timestamp: Long): String = timeFormat.format(Date(timestamp))
 
-    fun groupCalls(calls: List<BlockedCall>): List<DayCallGroup> {
+    fun groupCalls(
+        calls: List<BlockedCall>,
+        todayLabel: String = "Today",
+        yesterdayLabel: String = "Yesterday"
+    ): List<DayCallGroup> {
         if (calls.isEmpty()) return emptyList()
 
         val cal = Calendar.getInstance()
@@ -48,8 +52,8 @@ object CallGrouper {
 
         return dayBuckets.map { (dayStart, dayCalls) ->
             val label = when (dayStart) {
-                today -> "Hoje"
-                yesterday -> "Ontem"
+                today -> todayLabel
+                yesterday -> yesterdayLabel
                 else -> dateFormat.format(Date(dayStart))
             }
 

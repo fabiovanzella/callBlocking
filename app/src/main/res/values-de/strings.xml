@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Anrufblocker</string>
+    <string name="tile_label">Anrufe blockieren</string>
+    <string name="tile_state_active">Geschützt</string>
+    <string name="tile_state_inactive">Pausiert</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">Willkommen beim Anrufblocker</string>
+    <string name="onboarding_subtitle">Blockieren Sie Spam- und Betrugsanrufe von Nummern, die nicht in Ihren Kontakten gespeichert sind.</string>
+    <string name="onboarding_role_title">Anruffilter</string>
+    <string name="onboarding_role_desc">Android muss die App als Standard-Anrufer-ID- und Spam-App festlegen, um unbekannte Nummern abzuweisen, bevor das Telefon klingelt.</string>
+    <string name="onboarding_btn_role">Als Standard-Anruffilter festlegen</string>
+    <string name="onboarding_role_granted">Filterberechtigung erteilt!</string>
+    <string name="onboarding_notif_title">Diskrete Benachrichtigungen</string>
+    <string name="onboarding_notif_desc">Erhalten Sie eine lautlose Übersicht in der Benachrichtigungsleiste, sobald ein Anruf abgewiesen wird.</string>
+    <string name="onboarding_btn_notif">Benachrichtigungen erlauben</string>
+    <string name="onboarding_xiaomi_title">HyperOS- / POCO-Optimierung</string>
+    <string name="onboarding_xiaomi_desc">Damit die Blockierung auch im Hintergrund zuverlässig funktioniert, aktivieren Sie \"Autostart\" und setzen Sie die Akkunutzung auf \"Keine Beschränkungen\".</string>
+    <string name="onboarding_btn_xiaomi">HyperOS-Einstellungen öffnen</string>
+    <string name="onboarding_tile_title">Schnelleinstellungen-Kachel</string>
+    <string name="onboarding_tile_desc">Sie können den Schnelleinstellungen eine Ein-/Aus-Kachel hinzufügen, falls Sie auf Lieferungen warten.</string>
+    <string name="onboarding_btn_add_tile">Zu Schnelleinstellungen hinzufügen</string>
+    <string name="onboarding_btn_finish">Loslegen</string>
+    <string name="onboarding_btn_skip">Diesen Schritt überspringen</string>
+    <string name="btn_back">Zurück</string>
+    <string name="btn_next">Weiter</string>
+    <string name="toast_copied">Nummer kopiert!</string>
+    <string name="log_repeated_format">%1$d abgewiesene Anrufe (letzter um %2$s)</string>
+
+    <!-- Log Screen -->
+    <string name="log_title">Blockierte Anrufe</string>
+    <string name="log_banner_warning">Schutz inaktiv: Die App ist nicht als Standard-Anruffilter festgelegt.</string>
+    <string name="log_banner_fix">Schutz aktivieren</string>
+    <string name="log_toggle_label">Automatische Blockierung</string>
+    <string name="mode_reject_title">Abweisen</string>
+    <string name="mode_reject_desc">Weist sofort ab ohne Ton oder Anruffenster</string>
+    <string name="mode_silence_title">Auf dem Bildschirm stummschalten</string>
+    <string name="mode_silence_desc">Zeigt den Anruf lautlos ohne Klingeln oder Vibration</string>
+    <string name="log_summary_today">%1$d heute</string>
+    <string name="log_summary_month">%1$d diesen Monat</string>
+    <string name="log_empty_title">Keine blockierten Anrufe</string>
+    <string name="log_empty_desc">Anrufe von Nummern, die nicht in Ihren Kontakten sind, werden hier angezeigt, sobald sie blockiert wurden.</string>
+    <string name="log_section_today">Heute</string>
+    <string name="log_section_yesterday">Gestern</string>
+    <string name="log_unknown_number">Private Nummer</string>
+
+    <!-- BottomSheet Actions -->
+    <string name="action_call">Anrufen</string>
+    <string name="action_save_contact">Kontakt speichern</string>
+    <string name="action_copy">Nummer kopieren</string>
+    <string name="action_search_web">Im Web suchen</string>
+    <string name="action_delete">Aus Protokoll löschen</string>
+    <string name="action_clear_all">Gesamten Verlauf löschen</string>
+    <string name="action_revisit_setup">Berechtigungen und Optimierungen prüfen</string>
+    <string name="dialog_clear_all_title">Blockierverlauf löschen?</string>
+    <string name="dialog_clear_all_msg">Dies löscht das Protokoll in der App. Das Standard-Anrufprotokoll Ihres Telefons bleibt unberührt.</string>
+    <string name="dialog_confirm">Löschen</string>
+    <string name="dialog_cancel">Abbrechen</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel_name">Blockierte Anrufe</string>
+    <string name="notif_channel_desc">Diskrete Benachrichtigungen für abgewiesene Anrufe unbekannter Nummern</string>
+    <string name="notif_title_single">Anruf blockiert</string>
+    <string name="notif_title_multiple">%1$d Anrufe blockiert</string>
+    <string name="notif_text_last">Letzter: %1$s um %2$s</string>
+</resources>

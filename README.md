@@ -1,119 +1,126 @@
-# 🛡️ Bloqueador de Chamadas (Android)
+# 🛡️ Call Blocker (Android)
 
 <p align="center">
-  <img src="app/src/main/res/drawable/ic_qs_shield.xml" width="96" height="96" alt="Ícone do Bloqueador" />
+  <img src="app/src/main/res/drawable/ic_qs_shield.xml" width="96" height="96" alt="Call Blocker Icon" />
 </p>
 
 <p align="center">
-  <strong>Aplicativo Android nativo que bloqueia automaticamente chamadas de golpistas, robôs e telemarketing fora da sua agenda de contatos.</strong>
+  <strong>Native Android application that automatically blocks scam, robocalls, and spam calls from numbers not saved in your contact list.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Plataforma-Android%2010%2B%20(API%2029%2B)-brightgreen?style=flat-square" alt="Android 10+" />
-  <img src="https://img.shields.io/badge/Linguagem-Kotlin-blue?style=flat-square" alt="Kotlin" />
+  <img src="https://img.shields.io/badge/Platform-Android%2010%2B%20(API%2029%2B)-brightgreen?style=flat-square" alt="Android 10+" />
+  <img src="https://img.shields.io/badge/Language-Kotlin-blue?style=flat-square" alt="Kotlin" />
   <img src="https://img.shields.io/badge/UI-Jetpack%20Compose%20%2F%20Material%203-blueviolet?style=flat-square" alt="Jetpack Compose" />
-  <img src="https://img.shields.io/badge/Privacidade-100%25%20Offline-orange?style=flat-square" alt="100% Offline" />
-  <img src="https://img.shields.io/badge/Licen%C3%A7a-MIT-green?style=flat-square" alt="Licença MIT" />
+  <img src="https://img.shields.io/badge/Privacy-100%25%20Offline-orange?style=flat-square" alt="100% Offline" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License" />
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><strong>📥 Baixar APK Atualizado (Releases)</strong></a>
+  <a href="../../releases/latest"><strong>📥 Download Latest APK (Releases)</strong></a>
+</p>
+
+<p align="center">
+  <strong>English</strong> • <a href="README.pt-BR.md">Português</a>
 </p>
 
 ---
 
-## 💡 Por que este app existe?
+## 💡 Why does this app exist?
 
-Os filtros nativos de spam das operadoras e do Google dependem de **bancos de dados de reputação comunitária**. Isso significa que se um golpista ou empresa de telemarketing ativar um chip novo hoje, a primeira ligação dele **passará direto pelo filtro** e tocará no seu bolso.
+Carrier and Google spam filters rely on **community reputation databases**. This means that if a scammer or telemarketing company activates a new SIM card today, their first calls will **bypass the filter completely** and ring directly on your phone.
 
-O **Bloqueador de Chamadas** funciona por **Lista de Permissão (Whitelist)**:
-- Se quem está ligando **já está salvo nos seus contatos**: a chamada toca normalmente.
-- Se quem está ligando **não está na sua agenda** (ou for número privado/oculto): o app intercepta na hora!
-
----
-
-## ✨ Recursos Principais
-
-- 🛡️ **Dois Modos de Ação Flexíveis:**
-  - **Rejeitar (Padrão):** Derruba a chamada no primeiro milissegundo. O telefone não toca, não vibra e não acende a tela. Paz absoluta.
-  - **Silenciar na Tela:** A chamada chama normalmente e acende a tela do discador permitindo atender manualmente (ex: se estiver aguardando entregador), mas o som da campainha é cortado em silêncio absoluto.
-- ⚡ **Acesso Rápido nos Ajustes do Android (Tile):**
-  - Botão com ícone de escudo na barra de notificações (onde fica Wi-Fi e Lanterna) para pausar ou reativar o bloqueio com **apenas 1 toque**, sem precisar abrir o app.
-- 📋 **Histórico Inteligente:**
-  - Registra as chamadas bloqueadas agrupadas por dia ("Hoje", "Ontem", datas).
-  - Contador de repetições: se o mesmo número insistir 5 vezes, aparece agrupado como um único item com badge `5x` e o horário da última tentativa.
-  - Ações rápidas em 1 toque: **Ligar de volta**, **Salvar como Contato**, **Copiar Número** e **Pesquisar no Google**.
-- 🔕 **Notificação Silenciosa e Agrupada:**
-  - Notificação discreta na barra (sem som e sem pop-up) com resumo atualizado: *"3 chamadas bloqueadas hoje - Última: (11) 4003-xxxx"*.
-- 🔒 **Privacidade Radical:**
-  - **Zero Acesso à Internet:** O app não possui nem declara permissão de internet (`INTERNET`). Nada sai do seu aparelho.
-  - **Sem Permissão de Contatos (`READ_CONTACTS`):** O app utiliza a arquitetura nativa `CallScreeningService` do Android Telecom, na qual o próprio sistema operacional filtra e entrega para triagem apenas números fora da agenda. O app nunca tem acesso à sua lista de contatos.
+**Call Blocker** operates on an **Allowlist (Whitelist) model**:
+- If the caller **is in your contacts**: the phone rings normally.
+- If the caller **is not in your contacts** (or is a private/hidden number): the app intercepts it immediately!
 
 ---
 
-## 📲 Como Instalar e Usar no Celular (Passo a Passo)
+## ✨ Key Features
 
-Você não precisa de computador para instalar o aplicativo. Basta seguir estes passos diretamente no seu celular Android:
-
-### 1. Baixar o APK
-1. No seu celular, acesse a aba [**Releases**](../../releases/latest) deste repositório no GitHub.
-2. Baixe o arquivo **`app-debug.apk`** (ou `app-release.apk`).
-
-### 2. Permitir a Instalação
-1. Toque no arquivo baixado na barra de notificações ou no gerenciador de arquivos.
-2. Se o Android exibir a mensagem *"Para sua segurança, seu smartphone não tem permissão para instalar apps desconhecidos desta fonte"*:
-   - Toque em **Configurações**.
-   - Ative a chave **"Permitir desta fonte"** e confirme.
-3. Toque em **Instalar**.
-
-### 3. Configuração Inicial (Onboarding)
-Ao abrir o app pela primeira vez, siga o assistente de 3 etapas simples:
-1. **Definir como Filtro de Chamadas:** Toque no botão e confirme o diálogo do Android escolhendo **Bloqueador de Chamadas** como o app padrão de identificação de chamadas e spam.
-2. **Notificações:** Permita o envio de notificações para receber os avisos silenciosos na barra.
-3. **Adicionar Acesso Rápido:** Adicione o botão de escudo aos botões da sua barra superior.
-
----
-
-## ⚙️ Configurações Importantes para Aparelhos Xiaomi / POCO / Redmi (HyperOS e MIUI)
-
-A Xiaomi possui um gerenciamento agressivo de bateria que pode congelar aplicativos em segundo plano. Para garantir que o filtro funcione 24 horas por dia mesmo se você não abrir o app por semanas:
-
-1. **Ativar o Início Automático:**
-   - Acesse: *Configurações > Apps > Gerenciar apps > Bloqueador de Chamadas*.
-   - Ative a opção **Início automático**.
-2. **Desativar a Economia de Bateria:**
-   - Na mesma tela do app, toque em **Economia de bateria**.
-   - Selecione a opção **"Sem restrições"**.
-
-*(O próprio app possui um atalho para essa tela no menu superior de 3 pontinhos > "Revisar permissões e otimizações")*.
+- 🛡️ **Two Flexible Action Modes:**
+  - **Reject (Default):** Drops the incoming call within the first millisecond. The phone doesn't ring, vibrate, or wake the screen. Absolute peace of mind.
+  - **Silence on Screen:** The call rings silently, waking the dialer screen so you can answer manually if needed (e.g., when waiting for a courier or delivery), while muting ringtone and vibration entirely.
+- ⚡ **Quick Settings Tile:**
+  - Shield-icon button in your Android notification shade (next to Wi-Fi and Flashlight) to pause or resume protection with **a single tap**, without ever opening the app.
+- 🌐 **Multilingual Support (i18n):**
+  - Fully localized in **English**, **Portuguese**, **Spanish**, **Japanese**, **French**, and **German**.
+  - Automatically follows system language and supports per-app language settings (Android 13+).
+- 📋 **Smart Call History Log:**
+  - Keeps records grouped by date ("Today", "Yesterday", and specific dates).
+  - Repetition counter: if the same number calls 5 times, it collapses into a single item with a `5x` badge and the timestamp of the latest attempt.
+  - 1-tap quick actions: **Call Back**, **Save to Contacts**, **Copy Number**, and **Search on Web**.
+- 🔕 **Silent & Summarized Notifications:**
+  - Low-priority notification in the status bar (no audible alert, no pop-up heads-up) with an up-to-date summary: *"3 calls blocked today - Last: +1 (555) 012-3456"*.
+- 🔒 **Radical Privacy:**
+  - **Zero Internet Access:** The app does not request or hold the `INTERNET` permission. Nothing ever leaves your device.
+  - **No Contacts Permission (`READ_CONTACTS`):** The app uses Android Telecom's native `CallScreeningService` API. The OS itself checks your address book and delivers only non-contact numbers for screening. The app never has access to your contacts list.
 
 ---
 
-## 🛠️ Para Desenvolvedores (Como Compilar o Projeto)
+## 📲 How to Install and Use on Your Phone (Step-by-Step)
 
-### Pré-requisitos
+You do not need a computer to install the app. Simply follow these steps directly on your Android phone:
+
+### 1. Download the APK
+1. On your phone, visit the [**Releases**](../../releases/latest) tab of this GitHub repository.
+2. Download the **`app-debug.apk`** (or `app-release.apk`) file.
+
+### 2. Allow Installation
+1. Tap the downloaded file in your notification drawer or file manager.
+2. If Android displays *"For your security, your phone is not allowed to install unknown apps from this source"*:
+   - Tap **Settings**.
+   - Enable **"Allow from this source"** and confirm.
+3. Tap **Install**.
+
+### 3. Initial Setup (Onboarding)
+When opening the app for the first time, follow the quick onboarding wizard:
+1. **Set as Default Call Screener:** Tap the button and confirm the Android system dialog by selecting **Call Blocker** as your default Caller ID & Spam app.
+2. **Notifications:** Allow notifications to receive silent summary updates in your status bar.
+3. **Add Quick Settings Tile:** Add the shield toggle button to your Quick Settings panel.
+
+---
+
+## ⚙️ Recommended Settings for Xiaomi / POCO / Redmi Devices (HyperOS & MIUI)
+
+Xiaomi devices employ aggressive battery management that may sleep background services. To ensure 24/7 protection even if you haven't opened the app in weeks:
+
+1. **Enable Autostart:**
+   - Go to: *Settings > Apps > Manage apps > Call Blocker*.
+   - Turn on **Autostart**.
+2. **Disable Battery Saver Restrictions:**
+   - In the same app info screen, tap **Battery saver**.
+   - Select **"No restrictions"**.
+
+*(The app includes a direct shortcut to this screen in the top-right menu: 3 dots > "Review permissions & optimizations")*.
+
+---
+
+## 🛠️ For Developers (Building from Source)
+
+### Prerequisites
 - **JDK 17+**
-- **Android SDK** com Platform 35 e Build-Tools 35.0.0
-- Variável `ANDROID_HOME` configurada no ambiente.
+- **Android SDK** with Platform 35 and Build-Tools 35.0.0
+- `ANDROID_HOME` environment variable configured.
 
-### Comandos Úteis
+### Common Commands
 ```bash
-# Clonar o repositório
-git clone https://github.com/SEU-USUARIO/callBlocking.git
+# Clone the repository
+git clone https://github.com/YOUR-USERNAME/callBlocking.git
 cd callBlocking
 
-# Rodar os testes unitários
+# Run unit tests
 ./gradlew testDebugUnitTest
 
-# Gerar o APK de Debug/Release
+# Build Debug APK
 ./gradlew assembleDebug
 
-# Instalar diretamente no celular conectado via USB
+# Install directly on a connected USB device
 ./gradlew installDebug
 ```
 
 ---
 
-## 📄 Licença
+## 📄 License
 
-Este projeto é software livre e de código aberto sob a licença [MIT](LICENSE).
+This project is free and open-source software under the [MIT License](LICENSE).

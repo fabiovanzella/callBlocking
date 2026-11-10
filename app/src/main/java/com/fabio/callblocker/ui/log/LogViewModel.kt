@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.fabio.callblocker.CallBlockerApp
+import com.fabio.callblocker.R
 import com.fabio.callblocker.data.BlockedCallRepository
 import com.fabio.callblocker.data.CallActionMode
 import com.fabio.callblocker.data.SettingsRepository
@@ -44,11 +45,13 @@ class LogViewModel(
         callRepository.allCalls,
         isRoleHeldFlow
     ) { enabled, mode, calls, roleHeld ->
+        val todayStr = appContext.getString(R.string.log_section_today)
+        val yesterdayStr = appContext.getString(R.string.log_section_yesterday)
         LogUiState(
             blockingEnabled = enabled,
             callActionMode = mode,
             isRoleHeld = roleHeld,
-            groups = CallGrouper.groupCalls(calls),
+            groups = CallGrouper.groupCalls(calls, todayLabel = todayStr, yesterdayLabel = yesterdayStr),
             summary = CallGrouper.computeSummary(calls),
             isLoading = false
         )

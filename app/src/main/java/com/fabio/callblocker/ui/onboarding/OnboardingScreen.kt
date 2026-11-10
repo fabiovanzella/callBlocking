@@ -153,7 +153,7 @@ fun OnboardingScreen(
             ) {
                 if (currentStep > 0) {
                     OutlinedButton(onClick = { currentStep-- }) {
-                        Text("Voltar")
+                        Text(stringResource(R.string.btn_back))
                     }
                 } else {
                     Spacer(modifier = Modifier.width(1.dp))
@@ -164,7 +164,7 @@ fun OnboardingScreen(
                         onClick = { currentStep++ },
                         enabled = (currentStep != 0 || isRoleHeld)
                     ) {
-                        Text("Próximo")
+                        Text(stringResource(R.string.btn_next))
                     }
                 } else {
                     Button(onClick = onFinish) {

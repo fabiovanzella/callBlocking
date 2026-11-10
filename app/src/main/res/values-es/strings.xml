@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Bloqueador de Llamadas</string>
+    <string name="tile_label">Bloquear Llamadas</string>
+    <string name="tile_state_active">Protegido</string>
+    <string name="tile_state_inactive">Pausado</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">Bienvenido a Bloqueador de Llamadas</string>
+    <string name="onboarding_subtitle">Bloquea llamadas de spam y estafas de números que no están en tu agenda de contactos.</string>
+    <string name="onboarding_role_title">Filtro de Llamadas</string>
+    <string name="onboarding_role_desc">Android necesita establecer esta app como tu identificador de llamadas y spam para rechazar números fuera de tus contactos antes de que suene.</string>
+    <string name="onboarding_btn_role">Establecer como Filtro Predeterminado</string>
+    <string name="onboarding_role_granted">¡Permiso de filtro concedido!</string>
+    <string name="onboarding_notif_title">Notificaciones Discretas</string>
+    <string name="onboarding_notif_desc">Recibe un resumen silencioso en la barra de notificaciones cada vez que se rechace una llamada.</string>
+    <string name="onboarding_btn_notif">Permitir Notificaciones</string>
+    <string name="onboarding_xiaomi_title">Optimización para HyperOS / POCO</string>
+    <string name="onboarding_xiaomi_desc">Para mantener el bloqueo activo incluso si la app pasa horas cerrada, activa el \"Inicio automático\" y selecciona ahorro de batería \"Sin restricciones\".</string>
+    <string name="onboarding_btn_xiaomi">Abrir Ajustes de HyperOS</string>
+    <string name="onboarding_tile_title">Ajustes Rápidos</string>
+    <string name="onboarding_tile_desc">Puedes añadir un botón de activar/desactivar en los Ajustes Rápidos de tu dispositivo para cuando estés esperando entregas.</string>
+    <string name="onboarding_btn_add_tile">Añadir a Ajustes Rápidos</string>
+    <string name="onboarding_btn_finish">Empezar a Usar</string>
+    <string name="onboarding_btn_skip">Omitir este paso</string>
+    <string name="btn_back">Atrás</string>
+    <string name="btn_next">Siguiente</string>
+    <string name="toast_copied">¡Número copiado!</string>
+    <string name="log_repeated_format">%1$d llamadas rechazadas (última a las %2$s)</string>
+
+    <!-- Log Screen -->
+    <string name="log_title">Llamadas Bloqueadas</string>
+    <string name="log_banner_warning">Protección Inactiva: la app no es el filtro de llamadas predeterminado.</string>
+    <string name="log_banner_fix">Activar Protección</string>
+    <string name="log_toggle_label">Bloqueo automático</string>
+    <string name="mode_reject_title">Rechazar</string>
+    <string name="mode_reject_desc">Rechaza directamente sin sonido ni pantalla de llamada</string>
+    <string name="mode_silence_title">Silenciar en pantalla</string>
+    <string name="mode_silence_desc">Muestra la llamada en silencio sin timbrar ni vibrar</string>
+    <string name="log_summary_today">%1$d hoy</string>
+    <string name="log_summary_month">%1$d este mes</string>
+    <string name="log_empty_title">No hay llamadas bloqueadas</string>
+    <string name="log_empty_desc">Las llamadas de números fuera de tus contactos aparecerán aquí en cuanto sean rechazadas.</string>
+    <string name="log_section_today">Hoy</string>
+    <string name="log_section_yesterday">Ayer</string>
+    <string name="log_unknown_number">Número privado</string>
+
+    <!-- BottomSheet Actions -->
+    <string name="action_call">Llamar</string>
+    <string name="action_save_contact">Guardar Contacto</string>
+    <string name="action_copy">Copiar Número</string>
+    <string name="action_search_web">Buscar en la Web</string>
+    <string name="action_delete">Eliminar del Registro</string>
+    <string name="action_clear_all">Borrar todo el historial</string>
+    <string name="action_revisit_setup">Revisar permisos y optimizaciones</string>
+    <string name="dialog_clear_all_title">¿Borrar el historial de bloqueos?</string>
+    <string name="dialog_clear_all_msg">Esto borrará los registros dentro de la app. El historial de llamadas del teléfono no se verá afectado.</string>
+    <string name="dialog_confirm">Borrar</string>
+    <string name="dialog_cancel">Cancelar</string>
+
+    <!-- Notifications -->
+    <string name="notif_channel_name">Llamadas Bloqueadas</string>
+    <string name="notif_channel_desc">Notificaciones discretas de llamadas rechazadas de desconocidos</string>
+    <string name="notif_title_single">Llamada bloqueada</string>
+    <string name="notif_title_multiple">%1$d llamadas bloqueadas</string>
+    <string name="notif_text_last">Última: %1$s a las %2$s</string>
+</resources>

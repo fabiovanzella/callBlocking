@@ -69,7 +69,10 @@ class BlockedCallNotifier(private val context: Context) {
             context.getString(R.string.notif_title_multiple, count)
         }
 
-        val formattedNumber = PhoneFormatter.format(lastNumber)
+        val formattedNumber = PhoneFormatter.format(
+            lastNumber,
+            fallbackUnknown = context.getString(R.string.log_unknown_number)
+        )
         val formattedTime = CallGrouper.formatTime(lastTimestamp)
         val contentText = context.getString(R.string.notif_text_last, formattedNumber, formattedTime)
 

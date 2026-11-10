@@ -335,7 +335,8 @@ fun LogScreen(
             onDismissRequest = { selectedItem = null },
             sheetState = sheetState
         ) {
-            val formatted = PhoneFormatter.format(item.number)
+            val unknownLabel = stringResource(R.string.log_unknown_number)
+            val formatted = PhoneFormatter.format(item.number, fallbackUnknown = unknownLabel)
             val isHidden = item.number.isNullOrBlank()
 
             Column(
@@ -352,7 +353,11 @@ fun LogScreen(
 
                 if (item.count > 1) {
                     Text(
-                        text = "${item.count} chamadas rejeitadas hoje (última às ${CallGrouper.formatTime(item.latestTimestamp)})",
+                        text = stringResource(
+                            R.string.log_repeated_format,
+                            item.count,
+                            CallGrouper.formatTime(item.latestTimestamp)
+                        ),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp)
@@ -392,7 +397,7 @@ fun LogScreen(
                         val clipboard =
                             context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
                         clipboard.setPrimaryClip(ClipData.newPlainText("Número", item.number))
-                        Toast.makeText(context, "Número copiado!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, context.getString(R.string.toast_copied), Toast.LENGTH_SHORT).show()
                         scope.launch { sheetState.hide() }.invokeOnCompletion { selectedItem = null }
                     }
 
@@ -480,8 +485,9 @@ private fun CallItemRow(
 
         Column(modifier = Modifier.weight(1f)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
+                val unknownLabel = stringResource(R.string.log_unknown_number)
                 Text(
-                    text = PhoneFormatter.format(item.number),
+                    text = PhoneFormatter.format(item.number, fallbackUnknown = unknownLabel),
                     style = MaterialTheme.typography.bodyLarge,
                     fontWeight = FontWeight.Medium
                 )
