@@ -1,7 +1,7 @@
 # 🛡️ Bloqueador de Chamadas (Android)
 
 <p align="center">
-  <img src="app/src/main/res/drawable/ic_qs_shield.xml" width="96" height="96" alt="Ícone do Bloqueador" />
+  <img src="docs/assets/logo.svg" width="96" height="96" alt="Ícone do Bloqueador" />
 </p>
 
 <p align="center">

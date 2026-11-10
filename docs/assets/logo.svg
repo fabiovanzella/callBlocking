@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B5E20" />
+      <stop offset="100%" stop-color="#388E3C" />
+    </linearGradient>
+  </defs>
+  <!-- Background squircle -->
+  <rect width="96" height="96" rx="22" fill="url(#shieldGrad)" />
+  <!-- Shield icon with checkmark -->
+  <g transform="translate(16, 16) scale(2.6666)">
+    <path fill="#FFFFFF" d="M12,1 L3,5 L3,11 C3,16.55 6.84,21.74 12,23 C17.16,21.74 21,16.55 21,11 L21,5 L12,1 Z M10,17 L6,13 L7.41,11.59 L10,14.17 L16.59,7.58 L18,9 L10,17 Z" />
+  </g>
+</svg>

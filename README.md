@@ -1,7 +1,7 @@
 # 🛡️ Call Blocker (Android)
 
 <p align="center">
-  <img src="app/src/main/res/drawable/ic_qs_shield.xml" width="96" height="96" alt="Call Blocker Icon" />
+  <img src="docs/assets/logo.svg" width="96" height="96" alt="Call Blocker Icon" />
 </p>
 
 <p align="center">
