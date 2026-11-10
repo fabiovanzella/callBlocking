@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Bloqueador</string>
-    <string name="tile_label">Bloquear Desconhecidos</string>
+    <string name="app_name">Bloqueador de Chamadas</string>
+    <string name="tile_label">Bloquear Chamadas</string>
     <string name="tile_state_active">Protegido</string>
-    <string name="tile_state_inactive">Desativado</string>
+    <string name="tile_state_inactive">Pausado</string>
 
     <!-- Onboarding -->
     <string name="onboarding_title">Bem-vindo ao Bloqueador</string>

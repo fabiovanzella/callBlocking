@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.65"
+        android:scaleY="0.65"
+        android:translateX="18.9"
+        android:translateY="18.9">
+        <!-- Escudo protetor -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M54,12 L24,24 L24,52 C24,70.5 36.8,87.6 54,92 C71.2,87.6 84,70.5 84,52 L84,24 Z" />
+        <!-- Ícone de telefone e corte interno em azul escuro -->
+        <path
+            android:fillColor="#0D47A1"
+            android:pathData="M54,22 C40,22 34,31 34,48 C34,68 44,79 54,82 C64,79 74,68 74,48 C74,31 68,22 54,22 Z" />
+        <!-- Fone estilizado em branco no centro -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M61,53.5 C59.2,53.5 57.5,53.2 55.9,52.7 C55.4,52.5 54.8,52.7 54.4,53.1 L52.2,55.3 C49.4,53.9 47.1,51.6 45.7,48.8 L47.9,46.6 C48.3,46.2 48.5,45.6 48.3,45.1 C47.8,43.5 47.5,41.8 47.5,40 C47.5,39.2 46.8,38.5 46,38.5 L41.5,38.5 C40.7,38.5 40,39.2 40,40 C40,51.6 49.4,61 61,61 C61.8,61 62.5,60.3 62.5,59.5 L62.5,55 C62.5,54.2 61.8,53.5 61,53.5 Z" />
+        <!-- Linha diagonal de bloqueio -->
+        <path
+            android:fillColor="#E53935"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="1.5"
+            android:pathData="M39,37 L69,67 L66,70 L36,40 Z" />
+    </group>
+</vector>
