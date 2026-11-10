@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><strong>📥 Baixar APK Atualizado (Releases)</strong></a>
+  <a href="https://github.com/fabiovanzella/callBlocking/releases/latest"><strong>📥 Baixar APK Atualizado (Releases)</strong></a>
 </p>
 
 <p align="center">
@@ -63,8 +63,8 @@ O **Bloqueador de Chamadas** funciona por **Lista de Permissão (Whitelist)**:
 Você não precisa de computador para instalar o aplicativo. Basta seguir estes passos diretamente no seu celular Android:
 
 ### 1. Baixar o APK
-1. No seu celular, acesse a aba [**Releases**](../../releases/latest) deste repositório no GitHub.
-2. Baixe o arquivo **`app-debug.apk`** (ou `app-release.apk`).
+1. No seu celular, acesse a aba [**Releases**](https://github.com/fabiovanzella/callBlocking/releases/latest) deste repositório no GitHub.
+2. Baixe o arquivo **`CallBlocker-v1.1.0.apk`**.
 
 ### 2. Permitir a Instalação
 1. Toque no arquivo baixado na barra de notificações ou no gerenciador de arquivos.
@@ -106,14 +106,14 @@ A Xiaomi possui um gerenciamento agressivo de bateria que pode congelar aplicati
 ### Comandos Úteis
 ```bash
 # Clonar o repositório
-git clone https://github.com/SEU-USUARIO/callBlocking.git
+git clone https://github.com/fabiovanzella/callBlocking.git
 cd callBlocking
 
 # Rodar os testes unitários
 ./gradlew testDebugUnitTest
 
-# Gerar o APK de Debug/Release
-./gradlew assembleDebug
+# Gerar o APK de Release
+./gradlew assembleRelease
 
 # Instalar diretamente no celular conectado via USB
 ./gradlew installDebug

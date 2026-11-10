@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><strong>📥 Download Latest APK (Releases)</strong></a>
+  <a href="https://github.com/fabiovanzella/callBlocking/releases/latest"><strong>📥 Download Latest APK (Releases)</strong></a>
 </p>
 
 <p align="center">
@@ -63,8 +63,8 @@ Carrier and Google spam filters rely on **community reputation databases**. This
 You do not need a computer to install the app. Simply follow these steps directly on your Android phone:
 
 ### 1. Download the APK
-1. On your phone, visit the [**Releases**](../../releases/latest) tab of this GitHub repository.
-2. Download the **`app-debug.apk`** (or `app-release.apk`) file.
+1. On your phone, visit the [**Releases**](https://github.com/fabiovanzella/callBlocking/releases/latest) tab of this GitHub repository.
+2. Download the **`CallBlocker-v1.1.0.apk`** file.
 
 ### 2. Allow Installation
 1. Tap the downloaded file in your notification drawer or file manager.
@@ -106,14 +106,14 @@ Xiaomi devices employ aggressive battery management that may sleep background se
 ### Common Commands
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR-USERNAME/callBlocking.git
+git clone https://github.com/fabiovanzella/callBlocking.git
 cd callBlocking
 
 # Run unit tests
 ./gradlew testDebugUnitTest
 
-# Build Debug APK
-./gradlew assembleDebug
+# Build Release APK
+./gradlew assembleRelease
 
 # Install directly on a connected USB device
 ./gradlew installDebug
