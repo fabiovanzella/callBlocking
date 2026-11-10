@@ -17,3 +17,7 @@ captures/
 # OS
 .DS_Store
 Thumbs.db
+
+# Kotlin & AI Agent tooling
+.kotlin/
+.agents/
